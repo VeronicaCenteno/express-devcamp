@@ -5,7 +5,7 @@ const router = express.Router()
 
 //Las rutas de bootcamps 
 // Crear nuevo Bootcamp 
-roouter.get('/' , (req, res)=>{
+router.get('/' , (req, res)=>{
     res
         .status(200)
         .json({
@@ -15,17 +15,17 @@ roouter.get('/' , (req, res)=>{
 })
 
 // Listar todos los Bootcamps 
-roouter.post('/' , (req, res)=>{
+router.post('/' , (req, res)=>{
     res
         .status(200)
         .json({
             "success": true,
-            "data": "Aqui van a salir todos los Bootcamsp "
+            "data": "Aqui van a salir todos los bootcamp "
         })
 })
 
 // Listar Bootcamp por id 
-roouter.get('/:id' , (req, res)=>{
+router.get('/:id' , (req, res)=>{
     console.log(req.params.id)
     res
         .status(200)
@@ -37,7 +37,7 @@ roouter.get('/:id' , (req, res)=>{
 
 
 //Actualizar el Bootcamp 
-roouter.put('/:id' , (req, res)=>{
+router.put('/:id' , (req, res)=>{
     console.log(req.params.id)
     res
         .status(200)
@@ -48,7 +48,7 @@ roouter.put('/:id' , (req, res)=>{
 })
 
 //Borrar Bootcamp 
-roouter.delete('/:id' , (req, res)=>{
+router.delete('/:id' , (req, res)=>{
     console.log(req.params.id)
     res
         .status(200)
@@ -57,4 +57,4 @@ roouter.delete('/:id' , (req, res)=>{
             "data": `Aqui se va a eliminar el bootcamp cuyo id es ${req.params.id}`
         })
 })
-module.express = router 
+module.exports = router 

@@ -20,22 +20,8 @@ const app = express()
 //rutas de proyecto 
 app.use('/api/v1/bootcamps' , bootcampRoutes)
 app.use('/api/v1/courses' , courseRoutes)
-//Endpoint de aplicacion 
-app.get('/' , (request , response)=>{
-    response
-        .status(200)
-        .json({
-            "success": true,
-            "data": "Request exitosa"
-        })
-        send('Ruta funcionando')
-})
-
-//EndPoints de dominio  
-
-
-
-
+//Endpoint de aplicacion  
+//EndPoints de dominio  oo
 //Imprimir la lista de endpoints validas por el proyecto 
 console.log(listEndPoint(app))
 
