@@ -18,9 +18,6 @@ module.exports = {
       phone: {
         type: Sequelize.STRING
       },
-      email: {
-        type: Sequelize.STRING
-      },
       average_rating: {
         type: Sequelize.INTEGER
       },

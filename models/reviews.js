@@ -14,12 +14,52 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Reviews.init({
-    title: DataTypes.STRING,
-    text: DataTypes.STRING,
-    rating: DataTypes.FLOAT
+    title:{ 
+      type:DataTypes.STRING,
+      allowNull : false,
+      validate:{
+        notNull : {
+          args: true, 
+          msg:'title debe estar presente'
+        },
+        notEmpty: {
+          args: true, 
+          msg:'title no debe ser vacio'
+        },
+        unique(value) {
+    
+          return Reviews.findOne({where:{title:value}})
+            .then((title) => {
+              if (title) {
+                throw new Error('Error hay mas de un nombre asi');
+              }
+            })
+        },
+      }
+    },
+    text: 
+    {
+      type: DataTypes.STRING,
+      validate:{
+        notEmpty: {
+          args: true, 
+          msg:'text no debe ser vacio'
+        },
+      }
+    },
+    rating: {
+      type:DataTypes.FLOAT,
+      validate:{
+        notEmpty: {
+          args: true, 
+          msg:'rating no debe ser vacio'
+        },
+      }
+    }
   }, {
     sequelize,
     modelName: 'Reviews',
+    timestamps: false
   });
   return Reviews;
 };

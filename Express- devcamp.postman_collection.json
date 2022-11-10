@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f6da9051-84ff-467b-b758-7c3ac8d7bd98",
+		"_postman_id": "acce10ed-2bd4-42eb-9cfc-5460cf7c280d",
 		"name": "Express- devcamp",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -183,7 +183,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/v1/users/8",
+							"raw": "http://localhost:5000/api/v1/users/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -193,7 +193,7 @@
 								"api",
 								"v1",
 								"users",
-								"8"
+								"4"
 							]
 						}
 					},
@@ -212,8 +212,30 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\" : \"CAMILO9@MISENA.EDU.CO\"\r\n}"
+							"raw": "{\r\n    \"email\" : \"camilo9@misena.edu.co\"\r\n}"
 						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/users/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar users",
+					"request": {
+						"method": "DELETE",
+						"header": [],
 						"url": {
 							"raw": "http://localhost:5000/api/v1/users/8",
 							"protocol": "http",
@@ -230,14 +252,19 @@
 						}
 					},
 					"response": []
-				},
+				}
+			]
+		},
+		{
+			"name": "Courses",
+			"item": [
 				{
-					"name": "eliminar users",
+					"name": "Traer todos los Courses",
 					"request": {
-						"method": "DELETE",
+						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/v1/users/1",
+							"raw": "http://localhost:5000/api/v1/courses",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -246,8 +273,121 @@
 							"path": [
 								"api",
 								"v1",
-								"users",
-								"1"
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Trear por id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/courses/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"courses",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Courses",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"weeks\": 10\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/courses/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"courses",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar Courses",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/courses/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"courses",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear curso",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n         \"title\": \"JAVA\",\r\n        \"description\": \"Courses for JAVA learning\",\r\n        \"weeks\": 5,\r\n        \"enroll_cost\": 4000,\r\n        \"minimum_skill\": \"ESSENTIAL\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/courses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"courses"
 							]
 						}
 					},
@@ -256,23 +396,137 @@
 			]
 		},
 		{
-			"name": "Prueba",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5000/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						""
-					]
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "Traer todos los Reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Traer por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/review/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"review",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Reviews",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"title\": \"ASI\",\r\n        \"text\": \"Reviews for FRONEND learning\",\r\n        \"rating\": 7\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Reviews",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": \"2\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/review/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"review",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Reviews",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/review/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"review",
+								"4"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }
